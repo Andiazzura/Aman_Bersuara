@@ -17,4 +17,12 @@ model Role {
   name    String?
   
 
-}gi
+}
+
+model ProfileMahasiswa {
+  id_user        String  @id @unique
+  name_mahasiswa String?
+  no_telphone      String?
+  gender         String?
+  
+}
