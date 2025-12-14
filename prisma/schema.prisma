@@ -11,3 +11,15 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+ 
+model report {
+  id_report     String  @id @unique
+  id_user_reporter String? @map("id_user(pelapor)")
+  category       String?
+  chronology      String?
+  file_evidence    String? @map("bukti(file)")
+  status         String?
+  created_at     String?
+  
+}
+
