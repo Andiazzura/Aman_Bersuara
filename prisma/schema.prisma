@@ -26,3 +26,11 @@ model ProfileMahasiswa {
   gender         String?
   
 }
+
+model Article {
+  id_article String  @id @unique
+  title      String?
+  category   String?
+  content    String?
+  
+}
