@@ -23,3 +23,14 @@ model report {
   
 }
 
+model Curhat {
+  id_curhat       String  @id @unique
+  id_user  String? @map("id_user")
+  id_psychologist    String?
+  message           String?
+  timstamp        String?
+  
+}
+
+
+
