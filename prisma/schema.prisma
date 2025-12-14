@@ -11,3 +11,18 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+
+model User {
+  username_email   String? @map("username / email")
+  password         String?
+  id_user          String  @id
+  id_role          String?
+  email            String?
+  
+
+}
+
+
+
+
