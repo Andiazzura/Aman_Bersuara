@@ -23,6 +23,14 @@ model User {
 
 }
 
+model Counselorpsychologist {
+  id_user           String  @id @unique
+  name_psychologist String? @map("name_psikolog / konselor")
+  jwork_schedule    String?
+  status            String?
+  work_experiance   String?
+  specialization    String?
 
+}
 
 
