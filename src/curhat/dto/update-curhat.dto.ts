@@ -1,19 +1,20 @@
-import { IsString, IsOptional } from 'class-validator';
+import { IsString, IsOptional, MinLength } from 'class-validator';
 import { PartialType } from '@nestjs/mapped-types';
 import { CreateCurhatDto } from './create-curhat.dto';
 
 export class UpdateCurhatDto extends PartialType(CreateCurhatDto) {
   @IsString()
   @IsOptional()
-  id_user_pengguna?: string;
+  id_user?: string;
 
   @IsString()
   @IsOptional()
-  id_psikolog?: string;
+  id_psychologist?: string;
 
   @IsString()
   @IsOptional()
-  pesan?: string;
+  @MinLength(10)
+  message?: string;
 
   @IsString()
   @IsOptional()

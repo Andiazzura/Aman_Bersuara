@@ -1,20 +1,19 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { UsersController } from './users.controller';
+import { Controller, Get, Post, Body } from '@nestjs/common';
 import { UsersService } from './users.service';
 
-describe('UsersController', () => {
-  let controller: UsersController;
+@Controller('users')
+export class UsersController {
+  constructor(private readonly usersService: UsersService) {}
 
-  beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      controllers: [UsersController],
-      providers: [UsersService],
-    }).compile();
+  @Post()
+  create(@Body() dto: CreateUserDto) {
+    return this.usersService.create(dto);
+  }
 
-    controller = module.get<UsersController>(UsersController);
-  });
+  // ✅ GET SEMUA USER
+  @Get()
+  findAll() {
+    return this.usersService.findAll();
+  }
+}
 
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
-  });
-});

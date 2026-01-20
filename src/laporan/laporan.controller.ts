@@ -19,16 +19,16 @@ export class LaporanController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.laporanService.findOne(+id);
+    return this.laporanService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateLaporanDto: UpdateLaporanDto) {
-    return this.laporanService.update(+id, updateLaporanDto);
+    return this.laporanService.update(id, updateLaporanDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.laporanService.remove(+id);
+    return this.laporanService.remove(id);
   }
 }

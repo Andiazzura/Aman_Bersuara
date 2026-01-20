@@ -1,24 +1,26 @@
-import { IsString, IsOptional } from 'class-validator';
+import { IsString, IsOptional, MinLength } from 'class-validator';
 
 export class CreateLaporanDto {
   @IsString()
-  id_laporan: string;
+  @MinLength(1)
+  id_report: string;
 
   @IsString()
   @IsOptional()
-  id_user_pelapor?: string;
+  id_user_reporter?: string;
 
   @IsString()
   @IsOptional()
-  kategori?: string;
+  category?: string;
 
   @IsString()
   @IsOptional()
-  kronologi?: string;
+  @MinLength(10)
+  chronology?: string;
 
   @IsString()
   @IsOptional()
-  bukti_file?: string;
+  file_evidence?: string;
 
   @IsString()
   @IsOptional()

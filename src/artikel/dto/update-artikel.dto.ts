@@ -1,17 +1,19 @@
-import { IsString, IsOptional } from 'class-validator';
+import { IsString, IsOptional, MinLength } from 'class-validator';
 import { PartialType } from '@nestjs/mapped-types';
 import { CreateArtikelDto } from './create-artikel.dto';
 
 export class UpdateArtikelDto extends PartialType(CreateArtikelDto) {
   @IsString()
   @IsOptional()
-  judul?: string;
+  @MinLength(5)
+  title?: string;
 
   @IsString()
   @IsOptional()
-  kategori?: string;
+  category?: string;
 
   @IsString()
   @IsOptional()
-  isi?: string;
+  @MinLength(10)
+  content?: string;
 }

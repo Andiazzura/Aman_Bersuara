@@ -1,16 +1,18 @@
-import { IsString, IsOptional } from 'class-validator';
+import { IsString, IsOptional, MinLength } from 'class-validator';
 
 export class CreatePsikologKonselorDto {
   @IsString()
+  @MinLength(1)
   id_user: string;
 
   @IsString()
   @IsOptional()
-  name_psikolog?: string;
+  @MinLength(3)
+  name_psychologist?: string;
 
   @IsString()
   @IsOptional()
-  jadwal_kerja?: string;
+  jwork_schedule?: string;
 
   @IsString()
   @IsOptional()
@@ -18,9 +20,10 @@ export class CreatePsikologKonselorDto {
 
   @IsString()
   @IsOptional()
-  pengalaman_kerja?: string;
+  @MinLength(5)
+  work_experiance?: string;
 
   @IsString()
   @IsOptional()
-  spesialisasi?: string;
+  specialization?: string;
 }

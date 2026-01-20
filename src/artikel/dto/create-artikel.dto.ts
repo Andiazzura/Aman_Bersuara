@@ -1,18 +1,21 @@
-import { IsString, IsOptional } from 'class-validator';
+import { IsString, IsOptional, MinLength } from 'class-validator';
 
 export class CreateArtikelDto {
   @IsString()
-  id_artikel: string;
+  @MinLength(1)
+  id_article: string;
 
   @IsString()
   @IsOptional()
-  judul?: string;
+  @MinLength(5)
+  title?: string;
 
   @IsString()
   @IsOptional()
-  kategori?: string;
+  category?: string;
 
   @IsString()
   @IsOptional()
-  isi?: string;
+  @MinLength(10)
+  content?: string;
 }

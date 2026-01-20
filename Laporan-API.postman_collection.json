@@ -1,0 +1,46 @@
+﻿{
+    "variable":  [
+                     {
+                         "key":  "base_url",
+                         "type":  "string",
+                         "value":  "http://localhost:3000"
+                     }
+                 ],
+    "info":  {
+                 "description":  "Complete API collection for Laporan (Report) endpoints in Aman Bersuara application",
+                 "name":  "Laporan API Collection",
+                 "schema":  "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+                 "_postman_id":  "laporan-api-collection"
+             },
+    "item":  [
+                 {
+                     "request":  {
+                                     "url":  {
+                                                 "host":  [
+                                                              "{{base_url}}"
+                                                          ],
+                                                 "raw":  "{{base_url}}/laporan",
+                                                 "path":  [
+                                                              "laporan"
+                                                          ]
+                                             },
+                                     "method":  "POST",
+                                     "body":  {
+                                                  "raw":  "{\n  \" id_report\\: \\RPT-001\\,\n \\id_user_reporter\\: \\USR-001\\,\n \\category\\: \\Sexual Harassment\\,\n \\chronology\\: \\Terjadi insiden yang sangat mengganggu pada hari Senin 20 Januari 2026 di area kampus bagian timur. Saya mengalami pelecehan verbal dari seseorang yang tidak dikenal.\\,\n \\file_evidence\\: \\https://example.com/evidence.pdf\\,\n \\status\\: \\pending\\,\n \\created_at\\: \\2026-01-20T10:30:00Z\\\n}",
+                                                  "mode":  "raw"
+                                              },
+                                     "description":  "Create a new laporan (report)",
+                                     "header":  [
+                                                    {
+                                                        "key":  "Content-Type",
+                                                        "value":  "application/json"
+                                                    }
+                                                ]
+                                 },
+                     "name":  "Create Laporan",
+                     "response":  [
+
+                                  ]
+                 }
+             ]
+}

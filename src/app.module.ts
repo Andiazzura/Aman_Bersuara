@@ -5,7 +5,11 @@ import { AppService } from './app.service';
 import { PrismaModule } from './prisma/prisma.module';
 import { LaporanModule } from './laporan/laporan.module';
 import { UsersModule } from './users/users.module';
-import { UserModule } from './user/user.module';
+import { ArtikelModule } from './artikel/artikel.module';
+import { CurhatModule } from './curhat/curhat.module';
+import { RoleModule } from './role/role.module';
+import { PsikologKonselorModule } from './psikolog-konselor/psikolog-konselor.module';
+import { ProfilMahasiswaModule } from './profil-mahasiswa/profil-mahasiswa.module';
 
 @Module({
   imports: [
@@ -16,7 +20,11 @@ import { UserModule } from './user/user.module';
     PrismaModule,
     LaporanModule,
     UsersModule,
-    UserModule,
+    ArtikelModule,
+    CurhatModule,
+    RoleModule,
+    PsikologKonselorModule,
+    ProfilMahasiswaModule,
   ],
   controllers: [AppController],
   providers: [AppService],
