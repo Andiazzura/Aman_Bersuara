@@ -11,6 +11,26 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+ 
+model report {
+  id_report     String  @id @unique
+  id_user_reporter String? @map("id_user(pelapor)")
+  category       String?
+  chronology      String?
+  file_evidence    String? @map("bukti(file)")
+  status         String?
+  created_at     String?
+  
+}
+
+model Curhat {
+  id_curhat       String  @id @unique
+  id_user  String? @map("id_user")
+  id_psychologist    String?
+  message           String?
+  timstamp        String?
+  
+}
 
 
 model User {
@@ -23,6 +43,36 @@ model User {
 
 }
 
+model Counselorpsychologist {
+  id_user           String  @id @unique
+  name_psychologist String? @map("name_psikolog / konselor")
+  jwork_schedule    String?
+  status            String?
+  work_experiance   String?
+  specialization    String?
+
+}
 
 
+model Role {
+  id_role String  @id @unique
+  name    String?
+  
 
+}
+
+model ProfileMahasiswa {
+  id_user        String  @id @unique
+  name_mahasiswa String?
+  no_telphone      String?
+  gender         String?
+  
+}
+
+model Article {
+  id_article String  @id @unique
+  title      String?
+  category   String?
+  content    String?
+  
+}
