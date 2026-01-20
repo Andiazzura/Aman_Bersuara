@@ -11,3 +11,26 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model Role {
+  id_role String  @id @unique
+  name    String?
+  
+
+}
+
+model ProfileMahasiswa {
+  id_user        String  @id @unique
+  name_mahasiswa String?
+  no_telphone      String?
+  gender         String?
+  
+}
+
+model Article {
+  id_article String  @id @unique
+  title      String?
+  category   String?
+  content    String?
+  
+}
