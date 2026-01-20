@@ -1,4 +1,5 @@
-import { IsString, IsOptional, PartialType } from 'class-validator';
+import { IsString, IsOptional } from 'class-validator';
+import { PartialType } from '@nestjs/mapped-types';
 import { CreateProfilMahasiswaDto } from './create-profil-mahasiswa.dto';
 
 export class UpdateProfilMahasiswaDto extends PartialType(CreateProfilMahasiswaDto) {
