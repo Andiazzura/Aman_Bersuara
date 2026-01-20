@@ -1,24 +1,16 @@
 import { IsString, IsOptional } from 'class-validator';
 
-export class CreateLaporanDto {
+export class CreatePsikologKonselorDto {
   @IsString()
-  id_laporan: string;
+  id_user: string;
 
   @IsString()
   @IsOptional()
-  id_user_pelapor?: string;
+  name_psikolog?: string;
 
   @IsString()
   @IsOptional()
-  kategori?: string;
-
-  @IsString()
-  @IsOptional()
-  kronologi?: string;
-
-  @IsString()
-  @IsOptional()
-  bukti_file?: string;
+  jadwal_kerja?: string;
 
   @IsString()
   @IsOptional()
@@ -26,5 +18,9 @@ export class CreateLaporanDto {
 
   @IsString()
   @IsOptional()
-  created_at?: string;
+  pengalaman_kerja?: string;
+
+  @IsString()
+  @IsOptional()
+  spesialisasi?: string;
 }
